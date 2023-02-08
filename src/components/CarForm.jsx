@@ -3,22 +3,13 @@ import React from 'react';
 import { AppState } from '../AppState.js';
 import { Car } from '../models/Car.js';
 import { carsService } from '../services/CarsService.js';
+import { BindEditable } from '../utils/FormHandler.js';
 import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
-
 function CarForm() {
 
   const editable = { ...AppState.car || new Car({}) }
-
-  function bindEditable() {
-    // TODO create better utility for this with revert
-    const target = window.event.target;
-    // @ts-ignore
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    // @ts-ignore
-    const name = target.name;
-    editable[name] = value
-  }
+  const bindEditable = BindEditable(editable)
 
   async function handleSubmit() {
     try {

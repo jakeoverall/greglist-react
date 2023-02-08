@@ -11,6 +11,7 @@ function HomePage() {
 
   async function getCars() {
     try {
+      console.log('getting cars')
       await carsService.getCars()
     } catch (e) {
       Pop.error(e)
@@ -30,16 +31,13 @@ function HomePage() {
     )
   }))
 
-
-
   useEffect(() => {
     getCars()
   }, [])
 
-
   return (
     <section className="home-page">
-
+      {/* CARS */}
       <div className="container my-3">
         <div className="row">
           {cars}
@@ -53,6 +51,8 @@ function HomePage() {
         </div>
       </div>
 
+
+      {/* BOOTSTRAP MODAL */}
       <div className="modal fade" id="carModal" tabIndex={-1} aria-labelledby="carModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">

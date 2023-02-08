@@ -26,6 +26,7 @@ class CarsService {
 
 
   async getCars() {
+    AppState.cars = []
     const response = await api.get('/cars')
     // NOTE always log the response data
     console.log('[get cars]', response.data)

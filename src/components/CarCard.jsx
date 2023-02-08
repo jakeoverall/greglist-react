@@ -1,12 +1,13 @@
 import { observer } from "mobx-react-lite";
 import PropTypes from 'prop-types';
-import React from "react";
+import React, { useEffect } from "react";
 import { AppState } from "../AppState.js";
 import { Car } from "../models/Car.js";
 import { carsService } from "../services/CarsService.js";
 import Pop from "../utils/Pop.js";
 import './styles/CarCard.scss';
 
+/**@param {{car:Car}} props */
 function CarCard({ car }) {
 
   async function removeCar() {
@@ -18,6 +19,12 @@ function CarCard({ car }) {
       Pop.error(e)
     }
   }
+
+
+  useEffect(() => {
+    // console.log('this is this car', car)
+  }, [])
+
 
   function setActiveCar() {
     AppState.car = car
