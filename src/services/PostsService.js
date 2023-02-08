@@ -2,6 +2,15 @@ import { AppState } from "../AppState.js";
 import { api } from "./AxiosService.js";
 
 class PostsService {
+  async likePost(post) {
+    if (!AppState.account) {
+      throw new Error('Na bro, you gotta login first')
+    }
+    const res = await api.post('api/posts/' + post.id + '/like')
+    const i = AppState.posts.findIndex(p => p.id == post.id)
+    AppState.posts.splice(i, 1, res.data)
+  }
+
   async getPosts(url = 'api/posts') {
     const res = await api.get(url)
     const posts = res.data.posts
