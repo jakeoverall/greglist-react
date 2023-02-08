@@ -1,0 +1,33 @@
+{
+  "name": "react-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@bcwdev/auth0provider-client": "^0.0.13",
+    "@mdi/font": "^7.1.96",
+    "axios": "^1.2.6",
+    "bootstrap": "^5.2.3",
+    "mobx": "^6.7.0",
+    "mobx-react": "^7.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "socket.io-client": "^4.5.4",
+    "sweetalert2": "^11.7.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "eslint": "^8.33.0",
+    "eslint-plugin-react": "^7.32.2",
+    "sass": "^1.57.1",
+    "vite": "^4.0.0"
+  }
+}

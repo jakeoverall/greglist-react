@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "settings": {
+    "react":{
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "no-unused-vars": 1,
+    "no-console": "off",
+    "no-debugger": "off",
+    "space-before-function-paren": [
+      1,
+      "never"
+    ]
+  }
+}
