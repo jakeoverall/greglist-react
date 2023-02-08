@@ -14,6 +14,10 @@ class ObservableAppState {
   /** @type {import('./models/Car.js').Car} */
   car = null
 
+  posts = []
+  newer = null
+  older = null
+
   constructor() {
     makeAutoObservable(this)
   }

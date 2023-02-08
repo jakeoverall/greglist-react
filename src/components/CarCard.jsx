@@ -5,7 +5,7 @@ import { AppState } from "../AppState.js";
 import { Car } from "../models/Car.js";
 import { carsService } from "../services/CarsService.js";
 import Pop from "../utils/Pop.js";
-import './styles/CarCard.scss';
+import './CarCard.scss';
 
 /**@param {{car:Car}} props */
 function CarCard({ car }) {

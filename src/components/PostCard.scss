@@ -1,0 +1,10 @@
+.PostCard {
+  max-width: 100ch;
+  .post-image{
+    max-height: 30vh;
+    object-fit: cover;
+  }
+  p{
+    max-width: 80ch;
+  }
+}
