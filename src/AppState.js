@@ -17,6 +17,7 @@ class ObservableAppState {
   posts = []
   newer = null
   older = null
+  profile = null
 
   constructor() {
     makeAutoObservable(this)

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AppState } from '../AppState.js';
 import { postsService } from '../services/PostsService.js';
 import Pop from '../utils/Pop.js';
@@ -24,17 +25,18 @@ export default function PostCard({ post }) {
 
 
   return (
-
     <div className="PostCard card p-0">
       <div className="d-flex px-2 align-items-center justify-content-between">
         <div className='p-2 d-flex gap-3 align-items-center'>
-          <img src={post.creator.picture} alt="" height={42} width={42} className="rounded-circle" />
+          <Link to={'/profile/' + post.creator.id}>
+            <div className={post.creator.graduated ? 'graduated' : ''}>
+              <img src={post.creator.picture} alt="" height={42} width={42} className="rounded-circle profile-img" />
+            </div>
+          </Link>
           <p className="mb-0">{post.creator.name}</p>
         </div>
         <div>
-
           <small>{new Date(post.createdAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}</small>
-
         </div>
       </div>
       {hasImage}
@@ -46,8 +48,8 @@ export default function PostCard({ post }) {
           <span className='selectable rounded'>
             {
               hasLiked
-              ? <span onClick={likePost}>💖</span>
-              : <span onClick={likePost}>💟</span>
+                ? <span onClick={likePost}>💖</span>
+                : <span onClick={likePost}>💟</span>
             }
           </span>
           <span>{post.likeIds.length}</span>

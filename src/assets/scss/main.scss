@@ -4,7 +4,7 @@
 @import "./_utilities.scss";
 @import "./loaders.scss";
 
-body{
+body {
   overscroll-behavior: none;
 }
 
@@ -39,4 +39,19 @@ select {
 form:invalid button[type="submit"] {
   filter: grayscale(1);
   pointer-events: none;
+}
+.profile-img {
+  object-fit: cover;
+}
+
+.graduated {
+  position: relative;
+  .profile-img {
+    border: 3px solid var(--bs-primary);
+    object-fit: cover;
+  }
+  &::after {
+    content: "🎓";
+    position: absolute;
+  }
 }

@@ -19,8 +19,24 @@ class PostsService {
     AppState.posts = posts
     AppState.newer = newer
     AppState.older = older
-
   }
+
+  async getProfile(id) {
+    AppState.profile = null
+    const res = await api.get('api/profiles/' + id)
+    AppState.profile = res.data
+  }
+
+
+  async getProfileContent(id) {
+    // eslint-disable-next-line no-undef
+    await Promise.allSettled([
+      this.getProfile(id),
+      this.getPosts('api/posts?creatorId=' + id)
+    ])
+  }
+
+
 }
 
 export const postsService = new PostsService()
