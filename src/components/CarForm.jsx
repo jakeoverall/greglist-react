@@ -9,7 +9,7 @@ import Pop from '../utils/Pop.js';
 function CarForm() {
 
   const editable = { ...AppState.car || new Car({}) }
-  const bindEditable = BindEditable(editable)
+  const bindEditable = BindEditable(editable) // probably needs a bit more testing maybe with useEffect
 
   async function handleSubmit() {
     try {
@@ -58,7 +58,6 @@ function CarForm() {
         <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Submit</button>
       </div>
     </form>
-
   )
 
 }
