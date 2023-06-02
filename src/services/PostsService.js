@@ -2,6 +2,12 @@ import { AppState } from "../AppState.js";
 import { api } from "./AxiosService.js";
 
 class PostsService {
+  
+  async createPost(post){
+    const res = await api.post('/api/posts', post)
+    AppState.posts.unshift(res.data)
+  }
+  
   async likePost(post) {
     if (!AppState.account) {
       throw new Error('Na bro, you gotta login first')

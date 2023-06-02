@@ -2,7 +2,8 @@
   max-width: 100ch;
   .post-image{
     max-height: 30vh;
-    object-fit: cover;
+    object-fit: contain;
+    aspect-ratio: 1/1;
   }
   p{
     max-width: 80ch;
